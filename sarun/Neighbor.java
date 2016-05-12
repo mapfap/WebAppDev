@@ -17,12 +17,14 @@ import java.io.DataInput;
 import java.io.DataOutput;
 import java.util.List;
 import java.util.ArrayList;
+import java.util.Set;
+import java.util.HashSet;
 
 public class Neighbor {
 
   public static class Mapper1 extends Mapper<Object,Text,IntWritable,Message>{
     public void map(Object key, Text value, Context context) throws IOException, InterruptedException {
-      String[] values = value.toString().split(" ");
+      String[] values = value.toString().split("\t");
       int from = Integer.parseInt(values[0]);
       int to = Integer.parseInt(values[1]);
       context.write(new IntWritable(from), new Message(to, true));
@@ -64,11 +66,11 @@ public class Neighbor {
 
   public static class Reducer2 extends Reducer<Text,Text,Text,Text> {
     public void reduce(Text key, Iterable<Text> values, Context context) throws IOException, InterruptedException {
-      String list = "";
+      Set<String> neighbors = new HashSet<String>();
       for (Text value: values) {
-        list += value.toString() + ", ";
+        neighbors.add(value.toString());
       }
-      context.write(key, new Text(list));
+      context.write(key, new Text(neighbors.toString()));
     }
   }
 
@@ -103,5 +105,7 @@ public class Neighbor {
     FileOutputFormat.setOutputPath(job2, outputPath);
     outputPath.getFileSystem(conf2).delete(outputPath, true);
     System.exit(job2.waitForCompletion(true) ? 0 : 1);
+
+    // hadoop com.sun.tools.javac.Main sarun/*.java && jar cf wc.jar sarun/*.class && hadoop jar wc.jar sarun.Neighbor test.txt && cat out/*
   }
 }
