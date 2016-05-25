@@ -1,8 +1,7 @@
 # Homework III
-[./bubble_sort_seq.c](./bubble_sort_seq.c)
-2 Processes (ms)
-
-4 Processes (ms)
+[./bubble_sort_mpi.c](./bubble_sort_mpi.c)
+2 Processes = 12.440955 s
+4 Processes = 4.889498 s
 
 # Homework V
 5. Sequential program that count links to node
@@ -23,5 +22,7 @@
 # Performance Report (Running Time)
 | Task           | Sequntial (s)   | Java Hadoop (s)  | Pig Latin (s)  |
 | -------------- |:---------------:| ----------------:|---------------:|
-| Count links    |                 |                  |                |
-| List neighbors | 25              |                  | n/a            |
+| Count links    | 5.25            |  22.22           | 43.61          |
+| List neighbors | 25.22           |  323.5           | n/a            |
+*Single Node Cluster*
+*1.8 GHz Intel Core i5, Macbook Air (Mid 2012)*
