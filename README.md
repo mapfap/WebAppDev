@@ -10,7 +10,7 @@
 6. MapReduce program that count links to node
 [./LinkCount.java](./LinkCount.java)
 7. Sequential program that find neighbor nodes
-[./NeighborSeq.java](./NeighborSeq.java)
+[./wd1/NeighborSeq.java](./wd1/NeighborSeq.java)
 8. MapReduce program that find neighbor nodes
 [./sarun/Neighbor.java](./sarun/Neighbor.java)
 
@@ -21,7 +21,7 @@
 [./neighbor.pig](./neighbor.pig)
 
 # Performance Report (Running Time)
-| Task           | Sequntial (ms)   | Java Hadoop  | Pig Latin    |
-| -------------- |:----------------:| ------------:|-------------:|
-| Count links    |
-| List neighbors |
+| Task           | Sequntial (s)   | Java Hadoop (s)  | Pig Latin (s)  |
+| -------------- |:---------------:| ----------------:|---------------:|
+| Count links    |                 |                  |                |
+| List neighbors | 25              |                  | n/a            |
