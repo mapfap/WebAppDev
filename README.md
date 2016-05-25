@@ -1,6 +1,8 @@
 # Homework III
 [./bubble_sort_mpi.c](./bubble_sort_mpi.c)
+
 2 Processes = 12.440955 s
+
 4 Processes = 4.889498 s
 
 # Homework V
